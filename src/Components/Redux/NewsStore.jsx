@@ -1,11 +1,12 @@
 // import { combineReducers, configureStore } from '@reduxjs/toolkit'
 // import createSagaMiddleware from '@redux-saga/core';
 // import { rootSaga } from '../Saga/rootSaga';
-// import newsReducer from './NewsSlice';
+// import NewsSlice from './NewsSlice';
 // import { flush } from 'redux-saga/effects';
 
+
 // const rootreducer = combineReducers({
-//     news: newsReducer,
+//     news: NewsSlice.reducer,
    
 // });
 
@@ -23,19 +24,19 @@
 
 // export default store
 
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
-import newsReducer from './NewsSlice';
+import NewsSlice from './NewsSlice';
 import { rootSaga } from '../Saga/rootSaga';
 
 
-
+const reducer=combineReducers({
+NewsData:NewsSlice  
+})
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
-  reducer: {
-    news: newsReducer,
-  },
+  reducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ thunk: false }).concat(sagaMiddleware),
 });
