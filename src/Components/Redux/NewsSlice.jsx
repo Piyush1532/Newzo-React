@@ -4,7 +4,7 @@ const initialState={
 latestNews:[]
 }
 
-export const Newsstore = createSlice({
+ const Newsstore = createSlice({
     name:"news",
     initialState,
     reducers: {
