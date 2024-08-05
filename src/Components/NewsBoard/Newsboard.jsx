@@ -16,15 +16,21 @@ const Newsboard = () => {
     <>
       <h1>Newsboard</h1>
 
-      {latestNews.map((val,id)=>{
-        return(
-          <div>
+<div className="card-outer">
+{latestNews.map((val, id) => (
+      
+      <div key={id} className='card'>
+            {val.urlToImage ? (
+            <img src={val.urlToImage} alt="news" className='img' />
+          ) : (
+          <img src={"https://c1.wallpaperflare.com/preview/21/93/67/news-yellow-newspaper-3d.jpg"} className='img'/>
+          )}
+               <p>{val.title}</p>
+             </div>
+            
+           ))}
+</div>
 
-<p>{val.title}</p>
-<img src={val.urlToImage} alt="" className='img' />
-          </div>
-        )
-      })}
     </>
   )
 }
