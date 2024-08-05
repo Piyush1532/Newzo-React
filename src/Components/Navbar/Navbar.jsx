@@ -12,7 +12,7 @@ const Navbar = ({ setCategories, categories }) => {
         <h1>Newszo</h1>
       </div>
       <ul className="nav" id="navLinks">
-        <li onClick={() => setCategories("home")} className={categories === "home" ? "active" : ""}>Home</li>
+        <li onClick={() => setCategories("general")} className={categories === "general" ? "active" : ""}>Home</li>
         <li onClick={() => setCategories("technology")} className={categories === "technology" ? "active" : ""}>Technology</li>
         <li onClick={() => setCategories("entertainment")} className={categories === "entertainment" ? "active" : ""}>Entertainment</li>
         <li onClick={() => setCategories("science")} className={categories === "science" ? "active" : ""}>Science</li>
