@@ -8,7 +8,7 @@ latestNews:[]
     name:"news",
     initialState,
     reducers: {
-        getNews:()=>{},
+        getNews:(state,action)=>{},
         GetLatestNews(state,action){
           state.latestNews=action.payload
         }
