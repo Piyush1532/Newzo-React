@@ -18,7 +18,7 @@ function App() {
   return (
     <>
 <Navbar setCategories={setCategories} categories={categories}/>
-<Newsboard/>
+<Newsboard categories={categories} />
 
 
     </>
