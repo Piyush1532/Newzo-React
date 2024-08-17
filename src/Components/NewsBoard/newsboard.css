@@ -1,132 +1,59 @@
-/* .card-outer{
-display: grid;
-grid-template-columns: repeat(6,1fr);
-grid-gap: 1rem;
 
-}
-.card:nth-child(1){
-    grid-column: span 4;
-    grid-row: span 2;
-
-}
-.card:nth-child(2),
-.card:nth-child(3){
-    grid-column: span 2;
-
-}
-
-.card:nth-child(4),
-.card:nth-child(5){
-    grid-column: span 3;
-}
-
-.card img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}  */
-
-/* .container{
+.container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 1rem;
-}
-.tile img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.tile:nth-child(1){
-    grid-column: span 4;
-    grid-row: span 2;
-}
-
-.tile:nth-child(2),
-.tile:nth-child(3){
-    grid-column: span 2;
-} */
-/* 
-.tile:nth-child(4),
-.tile:nth-child(5){
-    grid-column: span 3;
-} */
-
-/* Container for the cards */
-/* Grid container setup */
-/* Grid container setup */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 1rem;
-    padding: 1rem;
-}
-
-/* Individual card styling */
-.card {
+.grid-item {
     background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-    display: flex;
-    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Hover effect on card */
-.card:hover {
-    transform: translateY(-5px);
-}
 
-/* Image section inside the card */
-.card-image img {
+.grid-item img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: auto;
+    display: block;
 }
 
-/* Content section inside the card */
-.card-content {
-    padding: 1rem;
-    text-align: center;
+.grid-item.large {
+    grid-column: 1 /span 2;
+    grid-row: 1 /span 2;
 }
 
-/* Specific grid positions */
-.card:nth-child(1) {
-    grid-column: span 4;
-    grid-row: span 2;
+.content {
+    padding: 15px;
 }
 
-.card:nth-child(2),
-.card:nth-child(3) {
-    grid-column: span 2;
+
+.grid-item h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
 }
 
-.card:nth-child(4),
-.card:nth-child(5) {
-    grid-column: span 3;
+/* .container > .grid-item:nth-child(1) {
+    grid-column:  1 /span 2;
+    grid-row: 1/span 2;
+} */
+.container .grid-item:nth-child(2) h2,
+.container .grid-item:nth-child(3) h2,
+.container .grid-item:nth-child(4) h2,
+.container .grid-item:nth-child(5) h2 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
 }
 
-/* Title inside the card */
-.card-content h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    color: #333;
+.grid-item p {
+    margin: 0;
+    color: #888;
+    font-size: 14px;
 }
 
-/* Read more button inside the card */
-.read-more-btn {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    color: white;
-    background-color: #007BFF;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
 
-.read-more-btn:hover {
-    background-color: #0056b3;
-}
