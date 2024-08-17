@@ -15,42 +15,24 @@ const Newsboard = ({categories}) => {
   return (
     <>
           <h1>{categories.charAt(0).toUpperCase() + categories.slice(1)} News</h1>
-{/* <div className="card-outer">
-<div className="card">
-{latestNews.slice(0,5).map((val, id) => (
-      
-      <>
-            {val.urlToImage ? (
-            <img src={val.urlToImage} alt="news"/>
-          ) : (
-          <img src={"https://c1.wallpaperflare.com/preview/21/93/67/news-yellow-newspaper-3d.jpg"} className='img'/>
-          )}
-               <p>{val.title}</p>
-             </>
-            
-           ))}
+<div className="container">
+    {latestNews.slice(0,5).map((val,index)=>(
+    <div key={index} className={`grid-item ${index === 0 ? 'large' : ''}`}>
+        {val.urlToImage ? (
+            <img src={val.urlToImage} alt="" />
+        ) :(
+            <img src={"https://qph.cf2.quoracdn.net/main-qimg-1a4bafe2085452fdc55f646e3e31279c-lq"} alt="" />
+        )}
+        <div className="content">
+        {val.title.length > 18 ? val.title.slice(0, -9) + '...' : val.title}
+            <p>{val.author}</p>
+        </div>
+    </div>
+    ))}
 </div>
-
-</div> */}
-                 <div className="grid-container">
-                {latestNews.slice(0, 5).map((val, id) => (
-                    <div className="card" key={id}>
-                        <div className="card-image">
-                            {val.urlToImage ? (
-                                <img src={val.urlToImage} alt="news" />
-                            ) : (
-                                <img src={"https://salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled.png"} alt="news" />
-                            )}
-                        </div>
-                        <div className="card-content">
-                            <h3>{val.title}</h3>
-                            <button className="read-more-btn">Read More</button>
-                        </div>
-                    </div>
-                ))}
-            </div>
     </>
   )
 }
 
 export default Newsboard
+
